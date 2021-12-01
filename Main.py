@@ -9,12 +9,19 @@ from Game import *
 #                  temper_meter=int, tilt_factor=int):
 
 def main():
-    p1 = Player('Otis', 'Mazzulla', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+    p1 = Player('Otis', 'Mazzulla', 50, 50, 50,
+                50, 50, 50, 50, 50, 50, 50, 50, 50)
     p2 = Spiker('Shane', 'Mazzulla', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
     team1 = Team('Turtles', p1, p2)
     team1.team_chemistry()
-    p1.to_string()
-    team1.to_string()
+    # p1.to_string()
+    # team1.to_string()
+
+    # Player spike function testing
+    # for i in range(100):
+    #     ph = 50
+    #     ph = p1.spike(ph)
+    #     print(ph)
 
 
 main()

@@ -8,7 +8,7 @@ class Team:
         self.team_name = team_name
         self.p1 = p1
         self.p2 = p2
-        self.chemistry = int(1/p1.tilt_factor + 1/p2.tilt_factor)
+        self.chemistry = int(100/p1.tilt_factor + 100/p2.tilt_factor)
 
     def to_string(self):
         print('Team name:\t', self.team_name)

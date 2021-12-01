@@ -43,8 +43,22 @@ class Player:
     def cool_down(self):
         self.ready = False
 
-    def spike(self):
-        pass
+    def spike(self, previous_hit=int):
+        # probability of a successful spike is linear combination of:
+        #   1) accuracy (50%)
+        #   2) previous hit (or set) (50%)
+        #       if previous_hit is large (close to 100), current hit is harder
+        #       if previous_hit is small (close to 1), current hit is easier
+        # accuracy directly increases probability of spike landing
+        # previous_hit inversely increases the probability of landing spike
+
+        acc_bonus = 0.5*random.randint(1, self.accuracy)
+        ph_bonus = 0.5*(2000/random.randint(1, previous_hit))
+        ph_bonus = min(ph_bonus, 50)
+        total_bonus = acc_bonus + ph_bonus
+        return int(total_bonus*self.power/100)
+        # ph = 100 --> 20
+        # ph = 20 --> 100
 
     def set(self):
         pass
